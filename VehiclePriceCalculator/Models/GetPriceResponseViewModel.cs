@@ -13,6 +13,10 @@
             )
         {
             VatRate = vatRate;
+            if (basePriceGross < 0 || basePriceNet < 0 || equipmentPriceGross < 0 || equipmentPriceNet < 0)
+            {
+                throw new ArgumentException("Price calculation cannot be less than 0.");
+            }
             BasePriceGross = basePriceGross;
             BasePriceNet = basePriceNet;
             IsBasePriceGross = isBasePriceGross;

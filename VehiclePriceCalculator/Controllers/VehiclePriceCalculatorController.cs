@@ -1,24 +1,22 @@
-using Dasof.Models;
-using Dasof.Services;
+using VehiclePriceCalculator.Models;
+using VehiclePriceCalculator.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dasof.Controllers
+namespace VehiclePriceCalculator.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class VehiclePriceCalculatorController : ControllerBase
     {
-        private readonly ILogger<VehiclePriceCalculatorController> _logger;
         private readonly IPriceCalculatorService _priceCalculatorService;
 
-        public VehiclePriceCalculatorController(ILogger<VehiclePriceCalculatorController> logger, IPriceCalculatorService priceCalculatorService)
+        public VehiclePriceCalculatorController(IPriceCalculatorService priceCalculatorService)
         {
-            _logger = logger;
             _priceCalculatorService = priceCalculatorService;
         }
 
         [HttpPost]
-        public GetPriceResponse GetPrice(GetPrice getPrice)
+        public GetPriceResponseViewModel GetPrice(GetPriceRequestViewModel getPrice)
         {
             return _priceCalculatorService.GetPrice(getPrice);
         }

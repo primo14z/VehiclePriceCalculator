@@ -1,14 +1,14 @@
-﻿namespace Dasof.Models
+﻿namespace VehiclePriceCalculator.Models
 {
-    public class GetPriceResponse
+    public class GetPriceResponseViewModel
     {
-        public GetPriceResponse(
-            double vatRate,
-            double basePriceGross,
-            double basePriceNet,
+        public GetPriceResponseViewModel(
+            VatRate vatRate,
+            decimal basePriceGross,
+            decimal basePriceNet,
             bool isBasePriceGross,
-            double equipmentPriceGross,
-            double equipmentPriceNet,
+            decimal equipmentPriceGross,
+            decimal equipmentPriceNet,
             bool isEquipmentPriceGross
             )
         {
@@ -23,15 +23,15 @@
             TotalPriceNet = basePriceNet + equipmentPriceNet;
         }
 
-        public double VatRate { get; set; }
-        public double BasePriceGross { get; set; }
-        public double BasePriceNet { get; set; }
+        public VatRate VatRate { get; set; }
+        public decimal BasePriceGross { get; set; }
+        public decimal BasePriceNet { get; set; }
         public bool IsBasePriceGross { get; set; }
-        public double EquipmentPriceGross { get; set; }
-        public double EquipmentPriceNet { get; set; }
+        public decimal EquipmentPriceGross { get; set; }
+        public decimal EquipmentPriceNet { get; set; }
         public bool IsEquipmentPriceGross { get; set; }
-        public double TotalPriceGross { get; set; }
-        public double TotalPriceNet { get; set; }
+        public decimal TotalPriceGross { get; set; }
+        public decimal TotalPriceNet { get; set; }
 
 
     }
